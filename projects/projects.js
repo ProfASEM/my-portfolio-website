@@ -73,6 +73,7 @@ document.addEventListener('DOMContentLoaded', function () {
         { title: 'Permutations<br>&<br>Combination', category: 'Python', img: 'python_5968350.png', desc: 'A project that evaluates<br> permutation &<br> combination ', link: 'https://github.com/ProfASEM/mini_projects/blob/main/Perm%26Comb.py' },
         { title: 'Vectors', category: 'Python', img: 'python_5968350.png', desc: 'a project about vectors', link: 'https://github.com/ProfASEM/mini_projects/blob/main/vectors.py' },
         { title: 'General Questions Page', category: 'Web Development', img: 'www_16328568.png', desc: 'A page of general questions<br> with collapse property<br> with dark-light mode', link: 'https://github.com/ProfASEM/general-questions-page'},
+        { title: 'Saudi Real Estate Market Analytics', category: 'Data Analysis', img: 'statistics_2758772.png', desc: 'Power BI dashboard analyzing the Saudi real estate market across selected cities using sales, rental, population, and macroeconomic indicators.', link: 'https://github.com/ProfASEM/ksa-real-estate-market-analysis'},
 
 
         // Add more projects as needed
