@@ -1,0 +1,11 @@
+Website refresh for asemhaij.com
+
+Copy the contents into the existing repository root, preserving folder names. Existing CNAME and hosting configuration are unchanged.
+
+Includes updated homepage, About, Projects, Workshops, Contact, shared assets and the updated CV. Public publication of the updated CV was approved by the user.
+
+The existing CV filename is preserved so download links remain valid.
+
+Validated: local links and assets, JavaScript syntax, desktop and 390px mobile preview, menu, filters and themes. Existing Formspree endpoint retained; no test message sent.
+
+Live deployment remains blocked by GitHub integration write permissions (403).

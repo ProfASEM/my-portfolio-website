@@ -1,0 +1,1060 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap');
+
+/* --------------------------------------------------------------------------
+   Design tokens
+   -------------------------------------------------------------------------- */
+/* Warm & Approachable */
+:root {
+  color-scheme: dark;
+  --bg: #2a2a2e;      /* رمادي دافئ (Charcoal) */
+  --panel: #323236;   /* رمادي دافئ أفتح قليلاً */
+  --text: #f7f5f0;    /* أبيض كريمي مريح للعين */
+  --muted: #a8a8a2;   /* رمادي ترابي */
+  --accent: #e07a5f;  /* برتقالي صدئ (Terracotta) */
+  --line: #4a4a4f;
+  --soft: #3d3d42;
+  --gold: #f4a261;    /* أصفر/برتقالي رملي */
+}
+
+body.light {
+  color-scheme: light;
+  --bg: #faf7f2;      /* أوف-وايت دافئ */
+  --panel: #ffffff;
+  --text: #2d2d2d;    /* رمادي داكن جداً بدلاً من الأسود */
+  --muted: #767676;
+  --accent: #d95d39;  /* برتقالي صدئ قوي */
+  --line: #e6e2d8;
+  --soft: #f0ebe1;
+  --gold: #e76f51;
+}
+/* --------------------------------------------------------------------------
+   Base reset and shared styling
+   -------------------------------------------------------------------------- */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: DM Sans, Manrope, Arial, sans-serif;
+  line-height: 1.65;
+  animation: fadeIn 3s ease-in-out;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+button,
+a,
+input,
+textarea {
+  -webkit-tap-highlight-color: transparent;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 5px;
+}
+
+button {
+  cursor: pointer;
+  border-radius: 20px;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* --------------------------------------------------------------------------
+   Layout utilities
+   -------------------------------------------------------------------------- */
+.wrap {
+  width: min(1240px, calc(100% - 100px));
+  margin-inline: auto;
+}
+
+.section {
+  padding-block: 80px;
+}
+
+.split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 100px;
+}
+
+/* --------------------------------------------------------------------------
+   Header and navigation
+   -------------------------------------------------------------------------- */
+.header {
+  border-bottom: 1px solid var(--line);
+  position: relative;
+  z-index: 10;
+  background: var(--bg);
+  animation: fadeInDown 1s ease-in-out;
+}
+
+.nav {
+  min-height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.brand {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  font-size: 13px;
+  letter-spacing: 3.7px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.brand small {
+  display: block;
+  color: var(--muted);
+  font-size: 8px;
+  letter-spacing: 2.4px;
+  margin-top: 4px;
+}
+
+.monogram {
+  font-size: 32px;
+  letter-spacing: 4px;
+  font-family: 'Lora' serif, Georgia, 'Times New Roman', Times, serif;
+}
+
+.monogram span,
+.brand-name span {
+  color: var(--accent);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 27px;
+  font-size: 13px;
+}
+
+.nav-links > a {
+  padding: 12px 0;
+  color: var(--muted);
+  position: relative;
+}
+
+.nav-links > a:hover,
+.nav-links > a[aria-current] {
+  color: var(--accent);
+  transform: scale(1.1); /* تكبير الكلمة بنسبة 10% */
+}
+
+.nav-links > a::after {
+    content: '';
+    position: absolute;
+    width: 0; /* الخط يبدأ بعرض 0 */
+    height: 1px; /* سُمك الخط */
+    bottom: 3px; /* المسافة بين الكلمة والخط */
+    inset-inline-start: 0;
+    /* استخدمت أحد الألوان الموجودة في متغيراتك (مثل اللون الأصفر الفاتح) */
+    background-color: var(--accent); 
+    transition: width 0.3s ease-in-out; /* مدة رسم الخط */
+}
+
+.nav-links > a:hover::after {
+    width: 100%; /* يتمدد الخط ليغطي عرض الكلمة بالكامل */
+}
+
+
+
+.theme-toggle {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--line);
+  padding: 8px 12px;
+  border-radius: 10px;
+  font-size: 11px;
+}
+
+.theme-toggle:hover {
+  border-color: var(--accent);
+  transform: scale(1.1); /* تكبير الزر بنسبة 10% */
+}
+
+.theme-toggle:focus {
+border-color: var(--accent);
+}
+
+.menu-toggle {
+  display: none;
+}
+
+.skip {
+  position: fixed;
+  top: -100px;
+  inset-inline-start: 20px;
+  background: var(--accent);
+  color: var(--bg);
+  padding: 12px;
+  z-index: 100;
+}
+
+.skip:focus {
+  top: 12px;
+}
+
+/* --------------------------------------------------------------------------
+   Typography and content blocks
+   -------------------------------------------------------------------------- */
+.eyebrow {
+  font-size: 11px;
+  letter-spacing: 2px;
+  font-weight: 700;
+  color: var(--accent);
+  display: block;
+}
+
+.dot {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  background: var(--accent);
+  border-radius: 50%;
+  margin-inline-end: 9px;
+}
+
+.hero h1,
+.page-intro h1 {
+  font: 600 clamp(44px, 5.4vw, 78px) / 1.08 'Lora', 'Georgia', 'Times New Roman', 'Times', serif;
+  letter-spacing: 1.5px;
+  margin: 28px 0;
+}
+
+.hero h1 em,
+.page-intro h1 em {
+  font-style: normal;
+  color: var(--accent);
+}
+
+.intro {
+  font-size: 18px;
+  line-height: 1.8;
+  color: var(--muted);
+  max-width: 610px;
+}
+
+.actions {
+  display: flex;
+  gap: 14px;
+  margin: 30px 0;
+  flex-wrap: wrap;
+}
+
+.button {
+  display: inline-flex;
+  gap: 25px;
+  justify-content: center;
+  align-items: center;
+  background: var(--accent);
+  border: 1px solid var(--accent);
+  color: #082522;
+  padding: 13px 20px;
+  font-size: 13px;
+  font-weight: 700;
+  border-radius: 20px;
+  transition: transform 0.2s, opacity 0.2s;
+}
+
+.light .button {
+  color: #ffffff;
+}
+
+.button:hover {
+  transform: translateX(10px);
+  opacity: 0.8;
+  /* outline: var(--accent) auto 1px; */
+}
+
+:where(html[dir="rtl"]) .button:hover {
+  transform: translateX(-10px);
+}
+
+.button.secondary {
+  background: transparent;
+  color: var(--text);
+  border-color: var(--line);
+}
+.button.secondary:hover {
+  background: var(--accent);
+ transform: translateY(5px);
+  border-color: var(--accent);
+}
+
+.location {
+  font-size: 11px;
+  color: var(--muted);
+  margin-top: 28px;
+}
+
+h2 {
+  font: 600 clamp(28px, 3vw, 40px) / 1.22 'Lora', 'Georgia', 'Times New Roman', 'Times', serif;
+  letter-spacing: -1.4px;
+  margin: 17px 0 22px;
+}
+
+h3 {
+  font: 600 20px / 1.4 'Lora', 'Georgia', 'Times New Roman', 'Times', serif;
+  margin: 12px 0;
+}
+
+p {
+  color: var(--muted);
+}
+
+.text-link {
+  color: var(--accent);
+  font-size: 13px;
+  font-weight: 600;
+  display: inline-block;
+  padding-block: 7px;
+}
+
+.text-link:hover {
+  text-decoration: underline;
+}
+
+/* --------------------------------------------------------------------------
+   Hero section and portrait styling
+   -------------------------------------------------------------------------- */
+.hero {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 65px;
+  align-items: center;
+  padding-block: 74px 70px;
+}
+
+.portrait-stage {
+  position: relative;
+  height: 445px;
+  background: linear-gradient(145deg, #163947, #0c2630);
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.portrait-grid {
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(#ffffff08 1px, transparent 1px), linear-gradient(90deg, #ffffff08 1px, transparent 1px);
+  background-size: 42px 42px;
+}
+
+.portrait-stage > img {
+  height: 94%;
+  width: 100%;
+  object-fit: contain;
+  object-position: center bottom;
+  position: absolute;
+  bottom: 0;
+  filter: grayscale(100%);
+}
+
+.portrait-stage:after {
+  content: '';
+  position: absolute;
+  inset: 50% 0 0;
+  background: linear-gradient(transparent, #071c29e8);
+}
+
+.portrait-label {
+  position: absolute;
+  z-index: 1;
+  bottom: 25px;
+  inset-inline-start: 28px;
+  color: #ffffff;
+}
+
+.portrait-label > span {
+  font-size: 9px;
+  letter-spacing: 2px;
+  color: #99c2c7;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.portrait-label strong {
+  font-size: 18px;
+  line-height: 1.4;
+  font-weight: 500;
+}
+
+.vertical-note {
+  position: absolute;
+  top: 24px;
+  inset-inline-start: 22px;
+  font-size: 8px;
+  letter-spacing: 2px;
+  color: #96bac3;
+  z-index: 1;
+}
+
+/* --------------------------------------------------------------------------
+   Tool strip and cards
+   -------------------------------------------------------------------------- */
+.tool-strip {
+  border-block: 1px solid var(--line);
+  background: var(--soft);
+}
+
+.tool-strip > .wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding-block: 24px;
+}
+
+.tool-strip span {
+  font-size: 9px;
+  letter-spacing: 1.7px;
+  color: var(--muted);
+}
+
+.tool-strip strong {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.section-top {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 30px;
+  margin-bottom: 35px;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.project-card {
+  border: 1px solid var(--line);
+  background: var(--panel);
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.project-image {
+  display: block;
+  overflow: hidden;
+  border-bottom: 1px solid var(--line);
+  background: #10202c;
+  aspect-ratio: 1.65;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+}
+
+.project-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.25s;
+}
+
+.project-image:hover img {
+  transform: scale(1.025);
+}
+
+.project-copy {
+  padding: 24px;
+}
+
+.project-copy .eyebrow {
+  font-size: 9px;
+  letter-spacing: 1.4px;
+}
+
+.project-copy p {
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.project-copy .tools {
+  font-size: 10px;
+  color: var(--muted);
+  margin: 22px 0 8px;
+}
+
+.project-card[hidden] {
+  display: none;
+}
+
+/* --------------------------------------------------------------------------
+   Experience and call to action blocks
+   -------------------------------------------------------------------------- */
+.experience-band {
+  background: var(--soft);
+  border-block: 1px solid var(--line);
+}
+
+.experience-list article + article {
+  border-top: 1px solid var(--line);
+  padding-top: 25px;
+  margin-top: 25px;
+}
+
+.meta {
+  font-size: 10px;
+  letter-spacing: 1px;
+  color: var(--muted);
+}
+
+.experience-list p {
+  font-size: 14px;
+}
+
+.cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  padding-block: 70px;
+}
+
+.cta h2 {
+  font-size: 32px;
+}
+
+.cta p {
+  font-size: 14px;
+}
+
+.footer {
+  border-top: 1px solid var(--line);
+  padding-block: 32px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+}
+
+.brand-name {
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.footer p {
+  font-size: 11px;
+}
+
+.footer > div {
+  display: flex;
+  gap: 25px;
+  font-size: 11px;
+  color: var(--muted);
+}
+
+/* --------------------------------------------------------------------------
+   About page styles
+   -------------------------------------------------------------------------- */
+.page-intro {
+  padding-block: 80px 35px;
+}
+
+.page-intro h1 {
+  font-size: clamp(40px, 4.6vw, 65px);
+}
+
+.about-top {
+  padding-top: 35px;
+  border-bottom: 1px solid var(--line);
+}
+
+.about-top p {
+  font-size: 15px;
+}
+
+.credentials {
+  background: var(--panel);
+  padding: 32px;
+  border-inline-start: 2px solid var(--accent);
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid var(--line);
+  margin: 25px 0;
+}
+
+.timeline article {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 70px;
+  padding-block: 32px;
+  border-bottom: 1px solid var(--line);
+}
+
+.timeline p {
+  font-size: 15px;
+}
+
+.skill-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+.skill-grid p {
+  font-size: 14px;
+}
+
+/* --------------------------------------------------------------------------
+   Projects page styles
+   -------------------------------------------------------------------------- */
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.filters button {
+  padding: 10px 20px;
+  background: transparent;
+  color: var(--muted);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  font-size: 13px;
+}
+
+.filters button.active {
+  background: var(--accent);
+  color: var(--bg);
+  border-color: var(--accent);
+}
+
+.project-section {
+  padding-top: 25px;
+}
+
+.project-section .projects-grid {
+  margin-top: 28px;
+}
+
+.compact .project-copy {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.compact .text-link {
+  margin-top: auto;
+}
+
+/* --------------------------------------------------------------------------
+   Workshops page styles
+   -------------------------------------------------------------------------- */
+.workshop-list {
+  padding-top: 20px;
+}
+
+.workshop-list article {
+  display: grid;
+  grid-template-columns: 70px 1fr auto;
+  align-items: center;
+  gap: 28px;
+  border-bottom: 1px solid var(--line);
+  padding: 27px 0;
+}
+
+.workshop-number {
+  font: 400 40px Manrope, Arial, sans-serif;
+  color: var(--accent);
+}
+
+.workshop-list h2 {
+  font-size: 25px;
+  margin: 0 0 7px;
+  letter-spacing: -0.5px;
+}
+
+.workshop-list p {
+  margin: 0;
+  font-size: 14px;
+}
+
+.development {
+  background: var(--panel);
+  padding: 35px;
+  margin-bottom: 30px;
+}
+
+.development p {
+  max-width: 650px;
+}
+
+/* --------------------------------------------------------------------------
+   Contact page styles
+   -------------------------------------------------------------------------- */
+.contact-layout {
+  padding-top: 20px;
+}
+
+.contact-details > a {
+  display: block;
+  font-size: 19px;
+  margin: 18px 0;
+  color: var(--accent);
+  overflow-wrap: anywhere;
+}
+
+.contact-details .text-link {
+  font-size: 14px;
+}
+
+.contact-form {
+  padding: 32px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+}
+
+.contact-form h2 {
+  font-size: 27px;
+  margin-top: 0;
+}
+
+.contact-form label {
+  display: block;
+  font-size: 12px;
+  margin: 18px 0 7px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  border: 1px solid var(--line);
+  background: var(--bg);
+  color: var(--text);
+  padding: 12px;
+  border-radius: 3px;
+}
+
+.contact-form textarea {
+  resize: vertical;
+}
+
+.contact-form button {
+  margin-top: 20px;
+}
+
+.form-note {
+  font-size: 11px;
+}
+
+html[lang="ar"] :is(body, h1, h2, h3, .workshop-number) {
+  font-family: Calibri, Arial, sans-serif;
+}
+
+/* --------------------------------------------------------------------------
+   Responsive styles
+   -------------------------------------------------------------------------- */
+@media (min-width: 1600px) {
+  .hero {
+    padding-block: 100px;
+  }
+
+  .portrait-stage {
+    height: 490px;
+  }
+}
+
+@media (max-width: 1050px) {
+  .wrap {
+    width: calc(100% - 60px);
+  }
+
+  .nav-links {
+    gap: 16px;
+  }
+
+  .brand small {
+    display: none;
+  }
+
+  .hero {
+    gap: 30px;
+  }
+
+  .hero h1 {
+    font-size: 59px;
+  }
+
+  .portrait-stage {
+    height: 390px;
+  }
+
+  .split {
+    gap: 50px;
+  }
+
+  .tool-strip strong {
+    font-size: 13px;
+  }
+
+  .tool-strip span {
+    font-size: 8px;
+  }
+
+  .project-copy {
+    padding: 19px;
+  }
+
+  .project-copy h3 {
+    font-size: 18px;
+  }
+
+  .footer > div {
+    gap: 15px;
+  }
+}
+
+@media (max-width: 760px) {
+  .wrap {
+    width: calc(100% - 36px);
+  }
+
+  .nav {
+    min-height: 78px;
+  }
+
+  .brand {
+    font-size: 11px;
+  }
+
+  .brand small {
+    display: block;
+    font-size: 7px;
+  }
+
+  .monogram {
+    font-size: 28px;
+  }
+
+  .menu-toggle {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    border: 1px solid var(--line);
+    background: transparent;
+    color: var(--text);
+    font-size: 12px;
+    padding: 8px 12px;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 78px;
+    inset-inline: 0;
+    background: var(--bg);
+    border-bottom: 1px solid var(--line);
+    padding: 20px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 5px;
+  }
+
+  .nav-links.open {
+    display: flex;
+    animation: fadeIn 0.6s ease-in-out;
+  }
+
+  .nav-links > a {
+    padding: 10px;
+  }
+
+  .theme-toggle {
+    margin-top: 8px;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    padding-block: 45px;
+    gap: 30px;
+  }
+
+  .hero h1 {
+    font-size: 58px;
+    letter-spacing: -3px;
+  }
+
+  .hero .eyebrow {
+    font-size: 9px;
+    letter-spacing: 1.3px;
+  }
+
+  .intro {
+    font-size: 16px;
+  }
+
+  .portrait-stage {
+    height: 370px;
+    max-width: 500px;
+    width: 100%;
+  }
+
+  .tool-strip > .wrap {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 20px;
+  }
+
+  .tool-strip span {
+    width: 100%;
+    font-size: 9px;
+  }
+
+  .tool-strip strong {
+    font-size: 14px;
+  }
+
+  .section {
+    padding-block: 50px;
+  }
+
+  .section-top {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-image {
+    aspect-ratio: 1.8;
+  }
+
+  .split {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .cta {
+    align-items: flex-start;
+    flex-direction: column;
+    padding-block: 50px;
+    gap: 10px;
+  }
+
+  .footer {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .footer > div {
+    flex-wrap: wrap;
+    gap: 18px;
+  }
+
+  .page-intro {
+    padding-block: 50px 15px;
+  }
+
+  .page-intro h1 {
+    font-size: 42px;
+    letter-spacing: -2px;
+  }
+
+  .timeline article {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .skill-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .workshop-list article {
+    grid-template-columns: 40px 1fr;
+    gap: 15px;
+  }
+
+  .workshop-list .meta {
+    grid-column: 2;
+  }
+
+  .workshop-number {
+    font-size: 28px;
+  }
+
+  .workshop-list h2 {
+    font-size: 21px;
+  }
+
+  .contact-form {
+    padding: 23px;
+  }
+
+  .project-section {
+    padding-top: 20px;
+  }
+
+  .button {
+    gap: 15px;
+  }
+
+  .contact-details > a {
+    font-size: 17px;
+  }
+
+  .development {
+    padding: 25px;
+  }
+
+  .cta h2 {
+    font-size: 29px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+  }
+}
+
