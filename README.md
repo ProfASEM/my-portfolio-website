@@ -1,47 +1,35 @@
-# MyPortfolio
+# Asem Haij | Data Analytics & Business Intelligence
 
-A personal portfolio website showcasing my work, projects, and contact info. Built with HTML, CSS, and JavaScript.
+I use Power BI, SQL, Python, and Excel to analyze markets, financial performance, and operations. This portfolio brings together my analytics projects, my background in mathematics, and my work in finance, project controls, and educational program management.
 
----
+Explore the site in English or Arabic. The Arabic version includes a right-to-left layout.
 
-## 📁 Project Structure
+[English portfolio](https://asemhaij.com/) · [النسخة العربية](https://asemhaij.com/ar/) · [Download my CV](./Asem_Haij_CV_Data_Analyst_Updated.docx)
 
-| File / Folder         | Description                                                             |
-|------------------------|-------------------------------------------------------------------------|
-| `main.html`            | The home / landing page of the portfolio.                              |
-| `about.html`           | About me section/page.                                                 |
-| `projects.html`        | Showcase of projects with images and descriptions.                      |
-| `contact.html`         | Contact section or page with form or contact details.                  |
-| `blogs.html`           | Blog section/page for portfolio articles or posts.                     |
-| `*.css`                | Stylesheets for each page (main.css, about.css, projects.css, blogs.css, etc.). |
-| `*.js`                 | JavaScript files for interactive behavior on respective pages (including blogs.js). |
-| `blogs.css`            | Stylesheet for the blog section/page.                                  |
-| `blogs.js`             | JavaScript for interactivity on the blog section/page.                 |
-| Images (`.png`, `.jpg`, `.webp`) | Portfolio images, personal photo, header backgrounds, icons etc. |
+## Explore the portfolio
 
----
+| Section | What you’ll find | English | العربية |
+| --- | --- | --- | --- |
+| About | My mathematics degree, professional experience, and analytical toolkit. | [About](./about/about.html) | [نبذة عني](./ar/about/about.html) |
+| Projects | Analyses of the Saudi real estate market, the Saudi financial sector, logistics performance, and healthcare efficiency and outcomes across MENA. The collection also includes web and mathematics projects. | [Projects](./projects/projects.html) | [المشاريع](./ar/projects/projects.html) |
+| Blog | Learning topics covering the analytics workflow, Power BI, data engineering, data science, and KPI selection. | [Blog](./blog/blog.html) | [المدونة](./ar/blog/blog.html) |
+| Contact | Ways to reach me about a role, project, or collaboration. | [Contact](./contact/contact.html) | [تواصل معي](./ar/contact/contact.html) |
 
-## 🛠 Technologies Used
+## Run locally
 
-- HTML5  
-- CSS3  
-- JavaScript (vanilla)  
-- Responsive layout / visuals with images  
+The site uses static HTML, CSS, and JavaScript. To preview it with Git and Python 3 installed, run the following commands.
 
----
+```bash
+git clone https://github.com/ProfASEM/my-portfolio-website.git
+cd my-portfolio-website
+python -m http.server 8000
+```
 
-## 🎯 Features
+Open the [English homepage](http://localhost:8000/) or the [Arabic homepage](http://localhost:8000/ar/).
 
-- Clean and modern design.  
-- Separate pages: Home, About, Projects, Contact, Blog.  
-- Use of visual media (images, backgrounds) to make portfolio more engaging.  
-- Interactive behaviors possibly via JS (e.g. menu toggles, smooth scrolling, etc.).  
+## Editing the site
 
----
-
-## 🚀 How to Run Locally
-
-1. Clone the repository:  
-   ```bash
-   git clone https://github.com/ProfASEM/MyProtofolio.git
-   ```
+- **Homepages** — The English and Arabic entry points are `index.html` and `ar/index.html`. When updating homepage content, also check `main/main.html` and `ar/main/main.html`.
+- **Translations** — The About, Projects, Blog, and Contact pages each have a corresponding HTML file under `ar/`. Update both language versions when making a shared content change.
+- **Styles and navigation** — Edit `assets/site.css` for shared styles and `assets/site.js` for interactions such as mobile navigation.
+- **Images** — Portfolio images are stored in `images/`.
