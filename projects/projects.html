@@ -1,61 +1,545 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PROJECTS</title>
-    <link rel="stylesheet" href="projects.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="icon" href="img-20220929T213902Z-001/img/favicon.png">
-</head>
-<body >
-    <header>
-        <nav>
-            <h1 id="logo">ASEM HAIJ</h1> 
-            <div class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" tabindex="0">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            <ul id="nav-menu">
-                <li><a href="../main/main.html">Home</a></li>
-                <li><a href="../about/about.html">About</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="../blog/blog.html">Blog</a></li>
-                <li><a href="../contact/contact.html">Contact</a></li>
-                <li><img src="../images/2408610.png" id="icon" alt="Toggle dark/light mode" style="width:32px;cursor:pointer;" title="Toggle dark/light mode"></li>
-            </ul>
-        </nav>
-    </header>
-    <h2 class="title">my projects</h2>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Projects | Asem Haij</title>
+    <meta
+      name="description"
+      content="Explore Asem Haij’s Power BI, Python, and SQL projects in Saudi real estate, finance, logistics, healthcare, and customer analysis."
+    >
+    <meta name="theme-color" content="#081923">
 
-<main>
-        <div class="button-container">
-            <button class="filter-btn" data-category="all">all</button>
-            <button class="filter-btn" data-category="Web Development">web</button>
-            <button class="filter-btn" data-category="Python Programming">python</button>
-            <button class="filter-btn" data-category="Data Analysis">data analysis</button>
+    <meta property="og:title" content="Projects | Asem Haij">
+    <meta
+      property="og:description"
+      content="Explore Asem Haij’s Power BI, Python, and SQL projects in Saudi real estate, finance, logistics, healthcare, and customer analysis."
+    >
+    <meta property="og:type" content="website">
+  <!-- Animate.css for simple animations -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/site.css">
+        <!-- في الـ <head> -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+   <script src="/assets/site.js" defer></script>
+  </head>
+
+  <body>
+    <!-- Accessibility helper for keyboard users -->
+    <a class="skip" href="#content">Skip to content</a>
+
+    <!-- Global site header and primary navigation -->
+    <header class="header">
+      <nav class="wrap nav" aria-label="Main navigation">
+        <a class="brand" href="/main/main.html" aria-label="Go to home page">
+          <span class="monogram">AH<span>.</span></span>
+          <span>
+            ASEM HAIJ
+            <small>DATA &amp; BUSINESS INTELLIGENCE</small>
+          </span>
+        </a>
+
+        <button class="menu-toggle" aria-expanded="false" aria-controls="navigation">
+          Menu <span aria-hidden="true">☰</span>
+        </button>
+
+        <div id="navigation" class="nav-links">
+          <a href="/main/main.html">Home</a>
+          <a href="/about/about.html">About</a>
+          <a href="/projects/projects.html" aria-current="page">Projects</a>
+          <a href="/blog/blog.html">Workshops</a>
+          <a href="/contact/contact.html">Contact</a>
+          <a href="/ar/projects/projects.html" class="lang-toggle" aria-label="Switch to Arabic version of the site">
+            العربية
+          </a>
+          <button class="theme-toggle" type="button" aria-label="Switch color theme">
+            Light mode
+          </button>
         </div>
-    <div class="projects-container">
-        <!-- Project items will be dynamically inserted here -->
-    </div>
+      </nav>
+    </header>
+
+    <main id="content">
+      <!-- Intro section to describe the portfolio focus -->
+      <section class="wrap page-intro" aria-labelledby="portfolio-heading" data-aos="fade-up" data-aos-delay="100">
+        <span class="eyebrow">PROJECT PORTFOLIO</span>
+        <h1 id="portfolio-heading">
+          From Business Questions<br>
+          to <em>Analytical Answers.</em>
+        </h1>
+        <p class="intro">
+          Independent projects exploring markets, operations, and customer behavior. Explore the
+          source code, dashboards, and methodology on GitHub.
+        </p>
+      </section>
+
+      <!-- Project gallery with category filtering -->
+      <section class="wrap section project-section" aria-labelledby="projects-gallery-heading" data-aos="fade-up" data-aos-delay="200">
+        <div class="filters" aria-label="Filter projects">
+          <button class="active" data-filter="Data Analysis" aria-pressed="true">Data Analytics</button>
+          <button data-filter="all" aria-pressed="false">All work</button>
+          <button data-filter="Python" aria-pressed="false">Python</button>
+          <button data-filter="Web Development" aria-pressed="false">Web Development</button>
+        </div>
+
+        <p id="project-count" class="meta" aria-live="polite"></p>
+
+        <div class="projects-grid" id="project-grid" aria-live="polite" data-aos="fade-up" data-aos-delay="300">
+          <article class="project-card" data-category="Data Analysis">
+            <a
+              class="project-image"
+              href="https://github.com/ProfASEM/ksa-real-estate-market-analysis"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="/assets/real-estate.png"
+                alt="Saudi Real Estate Market Power BI dashboard"
+                loading="lazy"
+              >
+            </a>
+            <div class="project-copy">
+              <span class="eyebrow">Market Analysis</span>
+              <h3>Saudi Real Estate Market</h3>
+              <p>
+                A connected view of sales, rents, population, and economic indicators across
+                Saudi cities.
+              </p>
+              <p class="tools">Power BI · DAX · Python</p>
+              <a
+                class="text-link"
+                href="https://github.com/ProfASEM/ksa-real-estate-market-analysis"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Explore project <span aria-hidden="true">→</span>
+              </a>
+            </div>
+          </article>
+
+          <article class="project-card" data-category="Data Analysis">
+            <a
+              class="project-image"
+              href="https://github.com/ProfASEM/financial-saudi-market-analysis"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="/assets/finance.png"
+                alt="Saudi Financial Sector Power BI dashboard"
+                loading="lazy"
+              >
+            </a>
+            <div class="project-copy">
+              <span class="eyebrow">Financial Reporting</span>
+              <h3>Saudi Financial Sector</h3>
+              <p>
+                Profitability, liquidity, leverage, and sector benchmarking using financial
+                statements from 2019–2024.
+              </p>
+              <p class="tools">Power BI · Python · Excel</p>
+              <a
+                class="text-link"
+                href="https://github.com/ProfASEM/financial-saudi-market-analysis"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Explore project <span aria-hidden="true">→</span>
+              </a>
+            </div>
+          </article>
+
+          <article class="project-card" data-category="Data Analysis">
+            <a
+              class="project-image"
+              href="https://github.com/ProfASEM/logistics-performance-analysis"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="/assets/logistics.png"
+                alt="Logistics Performance Power BI dashboard"
+                loading="lazy"
+              >
+            </a>
+            <div class="project-copy">
+              <span class="eyebrow">Operational Reporting</span>
+              <h3>Logistics Performance</h3>
+              <p>
+                Delivery delays, SLA performance, and carrier comparisons to investigate
+                operational bottlenecks.
+              </p>
+              <p class="tools">Power BI · Python · Excel</p>
+              <a
+                class="text-link"
+                href="https://github.com/ProfASEM/logistics-performance-analysis"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Explore project <span aria-hidden="true">→</span>
+              </a>
+            </div>
+          </article>
+
+          <article class="project-card compact" data-category="Data Analysis">
+              <a
+              class="project-image"
+              href="https://github.com/ProfASEM/mena-healthcare-efficiency"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="/assets/mena-healthcare.png"
+                alt="MENA Healthcare Efficiency dashboard"
+                loading="lazy"
+              >
+            </a>
+            <div class="project-copy">
+              <span class="eyebrow">Data Analysis</span>
+              <h3>MENA Healthcare Efficiency &amp; Outcomes</h3>
+              <p>
+                Consulting-style healthcare efficiency analysis across MENA using Python and Power BI.
+              </p>
+              <a
+                class="text-link"
+                href="https://github.com/ProfASEM/mena-healthcare-efficiency"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Explore project →
+              </a>
+            </div>
+          </article>
+
+          <article class="project-card compact" data-category="Data Analysis">
+              <a
+              class="project-image"
+              href="https://github.com/ProfASEM/urban-living-efficiency"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="/assets/urban-efficiency.png"
+                alt="Urban Living Efficiency dashboard"
+                loading="lazy"
+              >
+            </a>
+            <div class="project-copy">
+              <span class="eyebrow">Data Analysis</span>
+              <h3>Urban Living Efficiency</h3>
+              <p>
+                Data-driven analysis of urban living efficiency across MENA cities using Numbeo
+                data (2025).
+              </p>
+              <a
+                class="text-link"
+                href="https://github.com/ProfASEM/urban-living-efficiency"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Explore project →
+              </a>
+            </div>
+          </article>
+
+          <article class="project-card compact" data-category="Data Analysis">
+              <a
+              class="project-image"
+              href="https://github.com/ProfASEM/car-sales-analysis"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="/assets/car-sales.png"
+                alt="Car Sales Analysis dashboard"
+                loading="lazy"
+              >
+            </a>
+            <div class="project-copy">
+              <span class="eyebrow">Data Analysis</span>
+              <h3>Car Sales Analysis</h3>
+              <p>
+                A full Business Intelligence case study combining Excel preprocessing, data
+                modeling, KPIs, and interactive dashboards.
+              </p>
+              <a
+                class="text-link"
+                href="https://github.com/ProfASEM/car-sales-analysis"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Explore project →
+              </a>
+            </div>
+          </article>
+
+          <article class="project-card compact" data-category="Data Analysis">
+            <a
+              class="project-image"
+              href="https://github.com/ProfASEM/world-data-analysis"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="/assets/world-analysis.png"
+                alt="World Data Analysis dashboard"
+                loading="lazy"
+              >
+            </a>
+            <div class="project-copy">
+              <span class="eyebrow">Data Analysis</span>
+              <h3>World Data Analysis</h3>
+              <p>
+                Explored global datasets covering population, economy, and demographics to uncover
+                cross-country patterns and highlight key global insights.
+              </p>
+              <a
+                class="text-link"
+                href="https://github.com/ProfASEM/world-data-analysis"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Explore project →
+              </a>
+            </div>
+          </article>
+
+          <article class="project-card compact" data-category="Data Analysis">
+              <a
+              class="project-image"
+              href="https://github.com/ProfASEM/e-commerce-analysis"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="/assets/e-commerce.png"
+                alt="E-Commerce Analysis dashboard"
+                loading="lazy"
+              >
+            </a>
+            <div class="project-copy">
+              <span class="eyebrow">Data Analysis</span>
+              <h3>E-Commerce Analysis</h3>
+              <p>
+                Analyzed e-commerce sales and customer behavior data to evaluate business
+                performance and identify purchasing patterns through segmentation.
+              </p>
+              <a
+                class="text-link"
+                href="https://github.com/ProfASEM/e-commerce-analysis"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Explore project →
+              </a>
+            </div>
+          </article>
+
+          <article class="project-card compact" data-category="Web Development">
+            <div class="project-copy">
+              <span class="eyebrow">Web Development</span>
+              <h3>Scroll Page</h3>
+              <p>Responsive scroll page.</p>
+              <a
+                class="text-link"
+                href="https://github.com/ProfASEM/scrollpage"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Explore project →
+              </a>
+            </div>
+          </article>
+
+          <article class="project-card compact" data-category="Web Development">
+            <div class="project-copy">
+              <span class="eyebrow">Web Development</span>
+              <h3>Menu Page</h3>
+              <p>Restaurant menu page with English and Arabic versions and responsive layout.</p>
+              <a
+                class="text-link"
+                href="https://github.com/ProfASEM/menu"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Explore project →
+              </a>
+            </div>
+          </article>
+
+          <article class="project-card compact" data-category="Python">
+            <div class="project-copy">
+              <span class="eyebrow">Python</span>
+              <h3>Prime Numbers</h3>
+              <p>A project that finds prime numbers between 1 and a user-defined limit.</p>
+              <a
+                class="text-link"
+                href="https://github.com/ProfASEM/mini_projects/blob/main/primeNumber.py"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Explore project →
+              </a>
+            </div>
+          </article>
+
+          <article class="project-card compact" data-category="Python">
+            <div class="project-copy">
+              <span class="eyebrow">Python</span>
+              <h3>Factorial</h3>
+              <p>Basic project that calculates the factorial of a positive integer.</p>
+              <a
+                class="text-link"
+                href="https://github.com/ProfASEM/mini_projects/blob/main/Factoriyel.py"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Explore project →
+              </a>
+            </div>
+          </article>
+
+          <article class="project-card compact" data-category="Python">
+            <div class="project-copy">
+              <span class="eyebrow">Python</span>
+              <h3>Fibonacci &amp; Lucas Numbers</h3>
+              <p>Basic project that evaluates any Fibonacci or Lucas number.</p>
+              <a
+                class="text-link"
+                href="https://github.com/ProfASEM/mini_projects/blob/main/Fib%26Luc.py"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Explore project →
+              </a>
+            </div>
+          </article>
+
+          <article class="project-card compact" data-category="Web Development">
+            <div class="project-copy">
+              <span class="eyebrow">Web Development</span>
+              <h3>Random Poem Page</h3>
+              <p>
+                A small page that generates random poems based on the number of paragraphs selected.
+              </p>
+              <a
+                class="text-link"
+                href="https://github.com/ProfASEM/random-poem-page"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Explore project →
+              </a>
+            </div>
+          </article>
+
+          <article class="project-card compact" data-category="Web Development">
+            <div class="project-copy">
+              <span class="eyebrow">Web Development</span>
+              <h3>Home Page Online Shopping</h3>
+              <p>A simple product-focused online shopping homepage.</p>
+              <a
+                class="text-link"
+                href="https://github.com/ProfASEM/homepage-online-shopping"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Explore project →
+              </a>
+            </div>
+          </article>
+
+          <article class="project-card compact" data-category="Python">
+            <div class="project-copy">
+              <span class="eyebrow">Python</span>
+              <h3>Permutations &amp; Combinations</h3>
+              <p>A project that evaluates permutation and combination values.</p>
+              <a
+                class="text-link"
+                href="https://github.com/ProfASEM/mini_projects/blob/main/Perm%26Comb.py"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Explore project →
+              </a>
+            </div>
+          </article>
+
+          <article class="project-card compact" data-category="Python">
+            <div class="project-copy">
+              <span class="eyebrow">Python</span>
+              <h3>Vectors</h3>
+              <p>A Python exercise exploring vector operations.</p>
+              <a
+                class="text-link"
+                href="https://github.com/ProfASEM/mini_projects/blob/main/vectors.py"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Explore project →
+              </a>
+            </div>
+          </article>
+
+          <article class="project-card compact" data-category="Web Development">
+            <div class="project-copy">
+              <span class="eyebrow">Web Development</span>
+              <h3>General Questions Page</h3>
+              <p>
+                A page of general questions with collapse behavior and dark/light mode support.
+              </p>
+              <a
+                class="text-link"
+                href="https://github.com/ProfASEM/general-questions-page"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Explore project →
+              </a>
+            </div>
+          </article>
+        </div>
+
+        <noscript>
+          <p>All projects are displayed. Enable JavaScript to filter them by category.</p>
+        </noscript>
+      </section>
+
+      <!-- Final call to action -->
+      <section class="wrap cta" aria-labelledby="connect-heading">
+        <div>
+          <span class="eyebrow">LET’S CONNECT</span>
+          <h2 id="connect-heading">Have a Role or a Project in Mind?</h2>
+          <p>Open to Data Analyst and Power BI opportunities in Saudi Arabia or Remotely.</p>
+        </div>
+
+        <a class="button" href="/contact/contact.html">
+          Get in Touch <span aria-hidden="true">→</span>
+        </a>
+      </section>
     </main>
-    <footer>
-    <a href="https://www.linkedin.com/in/asem-haij-9797562a8" target="_blank" class="linkedin" aria-label="LinkedIn">
-        <i class="fa-brands fa-linkedin"></i>
-    </a>
-    <a href="https://github.com/ProfASEM" target="_blank" class="github" aria-label="GitHub">
-        <i class="fa-brands fa-github"></i>
-    </a>
-        <div class="copyright">
-           <p>Prof.ASEM HAIJ <strong id="year"></strong> <span>&copy</span> </p>
-        </div>
+
+    <!-- Footer with brand and contact links -->
+    <footer class="wrap footer">
+      <a class="brand-name" href="/main/main.html">ASEM HAIJ<span>.</span></a>
+      <p>Data, understood. Decisions, informed.</p>
+
+      <div>
+        <a href="https://www.linkedin.com/in/asem-haij-9797562a8" target="_blank" rel="noopener noreferrer">
+          LinkedIn →
+        </a>
+        <a href="https://github.com/ProfASEM" target="_blank" rel="noopener noreferrer">
+          GitHub →
+        </a>
+        <span>© <span data-year>2026</span> Asem Haij</span>
+      </div>
     </footer>
-<script src="projects.js"></script>    
-</body>
+        <!-- قبل نهاية <body> -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+  </body>
 </html>

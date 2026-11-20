@@ -1,84 +1,306 @@
-<!-- Main Personal Website Page: Includes navigation, dark/light mode, animated button, and responsive design -->
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <!-- Responsive and compatibility meta tags -->
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Personal Website</title>
-  <!-- Main stylesheet for the homepage -->
-  <link rel="stylesheet" href="main.css">
-  <!-- Font Awesome for social icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <!-- Animate.css for simple animations -->
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Data Analyst &amp; Business Intelligence | Asem Haij</title>
+    <meta
+      name="description"
+      content="Asem Haij — Data Analyst using Power BI, SQL, Python, and Excel for financial, market, and operational reporting."
+    >
+    <meta name="theme-color" content="#081923">
+
+    <meta property="og:title" content="Data Analyst &amp; Business Intelligence | Asem Haij">
+    <meta
+      property="og:description"
+      content="Asem Haij — Data Analyst using Power BI, SQL, Python, and Excel for financial, market, and operational reporting."
+    >
+    <meta property="og:type" content="website">
+      <!-- Animate.css for simple animations -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-  <!-- Google Fonts: Montserrat -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <!-- Favicon -->
-  <link rel="icon" href="img-20220929T213902Z-001/img/favicon.png">
-</head>
-<body >
-    <!-- Header and Navigation Bar -->
-    <header>
-      <nav>
-        <h1 id="logo">ASEM HAIJ</h1> 
-        <!-- Hamburger menu for mobile -->
-        <div class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" tabindex="0">
-          <span></span>
-          <span></span>
-          <span></span>
+
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="/assets/site.css">
+    <!-- في الـ <head> -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+
+    <script src="/assets/site.js" defer></script>
+  </head>
+
+  <body>
+    <!-- Accessibility helper for keyboard users -->
+    <a class="skip" href="#content">Skip to content</a>
+
+    <!-- Global site header and main navigation -->
+    <header class="header">
+      <nav class="wrap nav" aria-label="Main navigation">
+        <a class="brand" href="/main/main.html" aria-label="Go to home page">
+          <span class="monogram">AH<span>.</span></span>
+          <span>
+            ASEM HAIJ
+            <small>DATA &amp; BUSINESS INTELLIGENCE</small>
+          </span>
+        </a>
+
+        <button class="menu-toggle" aria-expanded="false" aria-controls="navigation">
+          Menu <span aria-hidden="true">☰</span>
+        </button>
+
+        <div id="navigation" class="nav-links">
+          <a href="/main/main.html" aria-current="page">Home</a>
+          <a href="/about/about.html">About</a>
+          <a href="/projects/projects.html">Projects</a>
+          <a href="/blog/blog.html">Workshops</a>
+          <a href="/contact/contact.html">Contact</a>
+          <a href="/ar/main/main.html" class="lang-toggle" aria-label="Switch to Arabic version of the site">
+            العربية
+          </a>
+          <button class="theme-toggle" type="button" aria-label="Switch color theme">
+            Light mode
+          </button>
         </div>
-        <ul id="nav-menu">
-          <li><a href="main.html">Home</a></li>
-          <li><a href="../about/about.html">About</a></li>
-          <li><a href="../projects/projects.html">Projects</a></li>
-          <li><a href="../blog/blog.html">Blog</a></li>
-          <li><a href="../contact/contact.html">Contact</a></li>
-          <!-- Dark/Light mode toggle icon -->
-          <li><img src="../images/2408610.png" id="icon" alt="Toggle dark/light mode" style="width:32px;cursor:pointer;" title="Toggle dark/light mode"></li>
-        </ul>
       </nav>
     </header>
-    <!-- Main Content: Personal Info and Download CV Button -->
-    <main>
-        <section class="info">
-            <h1>I'm<span> ASEM</span></h1>
-            <p>>Data Analyst with a strong mathematics background,<br>
-building end-to-end analytics projects using SQL, Python, and Power BI
-to support data-driven decision making.
+
+    <main id="content">
+      <!-- Hero section introducing the professional profile -->
+      <section class="wrap hero" aria-labelledby="hero-heading" data-aos="fade-up" data-aos-delay="100">
+        <div class="hero-copy">
+          <span class="eyebrow"><span class="dot"></span> DATA ANALYST · BUSINESS INTELLIGENCE</span>
+          <h1 id="hero-heading">
+            Making Data<br>
+            Make <em>Sense.</em>
+          </h1>
+          <p class="intro">
+            I’m Asem Haij. I turn complex data into clear dashboards and reports for
+            financial, market, and operational decisions.
+          </p>
+
+          <div class="actions">
+            <a class="button" href="/projects/projects.html">
+              Explore My Work <span aria-hidden="true">→</span>
+            </a>
+            <a class="button secondary" href="/Asem_Haij_CV_Data_Analyst_Updated.docx" download>
+              Download CV <span aria-hidden="true">↓</span>
+            </a>
+            
+          </div>
+
+          <p class="location">Based in Jeddah, Saudi Arabia · Mathematics graduate</p>
+        </div>
+
+        <div class="portrait-stage" aria-label="Profile image area">
+          <div class="portrait-grid"></div>
+          <span class="vertical-note">ANALYSIS / CLARITY / CONTEXT</span>
+          <img
+            src="/images/my_personal_picture-removebg-preview.png"
+            alt="Asem Haij"
+            fetchpriority="high"
+          >
+          <div class="portrait-label">
+            <span>THE PERSON BEHIND THE DATA</span>
+            <strong>Mathematical thinking.<br>Practical business context.</strong>
+          </div>
+        </div>
+      </section>
+
+      <!-- Core tools strip highlighting technical stack -->
+      <div class="tool-strip" aria-label="Technical skill strip" data-aos="fade-up" data-aos-delay="300">
+        <div class="wrap">
+          <span>MY ANALYTICAL TOOLKIT</span>
+          <strong>Power BI</strong>
+          <strong>SQL</strong>
+          <strong>Python</strong>
+          <strong>Excel</strong>
+          <strong>DAX</strong>
+          <strong>Power Query</strong>
+        </div>
+      </div>
+
+      <!-- Featured projects section -->
+      <section class="wrap section" aria-labelledby="projects-heading" data-aos="fade-up" data-aos-delay="500">
+        <div class="section-top">
+          <div>
+            <span class="eyebrow">01 / SELECTED WORK</span>
+            <h2 id="projects-heading">
+              Questions Explored.<br>
+              Insights Made Visible.
+            </h2>
+          </div>
+          <a class="text-link" href="/projects/projects.html">All Projects →</a>
+        </div>
+
+        <div class="projects-grid">
+          <article class="project-card" data-category="Data Analysis">
+            <a
+              class="project-image"
+              href="https://github.com/ProfASEM/ksa-real-estate-market-analysis"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="/assets/real-estate.png"
+                alt="Saudi Real Estate Market Power BI dashboard"
+                loading="lazy"
+              >
+            </a>
+            <div class="project-copy">
+              <span class="eyebrow">Market Analysis</span>
+              <h3>Saudi Real Estate Market</h3>
+              <p>
+                A connected view of sales, rents, population, and economic indicators across
+                Saudi cities.
+              </p>
+              <p class="tools">Power BI · DAX · Python</p>
+              <a
+                class="text-link"
+                href="https://github.com/ProfASEM/ksa-real-estate-market-analysis"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Explore Project <span aria-hidden="true">→</span>
+              </a>
+            </div>
+          </article>
+
+          <article class="project-card" data-category="Data Analysis">
+            <a
+              class="project-image"
+              href="https://github.com/ProfASEM/financial-saudi-market-analysis"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="/assets/finance.png"
+                alt="Saudi Financial Sector Power BI dashboard"
+                loading="lazy"
+              >
+            </a>
+            <div class="project-copy">
+              <span class="eyebrow">Financial Reporting</span>
+              <h3>Saudi Financial Sector</h3>
+              <p>
+                Profitability, liquidity, leverage, and sector benchmarking using financial
+                statements from 2019–2024.
+              </p>
+              <p class="tools">Power BI · Python · Excel</p>
+              <a
+                class="text-link"
+                href="https://github.com/ProfASEM/financial-saudi-market-analysis"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Explore Project <span aria-hidden="true">→</span>
+              </a>
+            </div>
+          </article>
+
+          <article class="project-card" data-category="Data Analysis">
+            <a
+              class="project-image"
+              href="https://github.com/ProfASEM/logistics-performance-analysis"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="/assets/logistics.png"
+                alt="Logistics Performance Power BI dashboard"
+                loading="lazy"
+              >
+            </a>
+            <div class="project-copy">
+              <span class="eyebrow">Operational Reporting</span>
+              <h3>Logistics Performance</h3>
+              <p>
+                Delivery delays, SLA performance, and carrier comparisons to investigate
+                operational bottlenecks.
+              </p>
+              <p class="tools">Power BI · Python · Excel</p>
+              <a
+                class="text-link"
+                href="https://github.com/ProfASEM/logistics-performance-analysis"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Explore Project <span aria-hidden="true">→</span>
+              </a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Business context section linking work experience to analytical practice -->
+      <section class="experience-band" aria-labelledby="experience-heading" data-aos="fade-up" data-aos-delay="300">
+        <div class="wrap split section">
+          <div>
+            <span class="eyebrow">02 / BUSINESS CONTEXT</span>
+            <h2 id="experience-heading">
+              Analysis Grounded<br>
+              in Real Work.
+            </h2>
+            <p class="intro">
+              Alongside independent analytics projects, I help structure financial information
+              and evaluate training programs.
             </p>
-            <!-- Animated Download CV Button -->
-            <button class="animated-button">
-              <!-- Arrow SVG (right) -->
-              <svg viewBox="0 0 24 24" class="arr-2" xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"
-                ></path>
-              </svg>
-              <span class="text"><a style="text-decoration: none; color: inherit;" href="../Asem_Haij_CV_Data_Analyst_Updated.docx">Download my CV</a></span>
-              <span class="circle"></span>
-              <!-- Arrow SVG (left) -->
-              <svg viewBox="0 0 24 24" class="arr-1" xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"
-                ></path>
-              </svg>
-            </button>
-        </section>
+            <a class="text-link" href="/about/about.html">More About My Experience →</a>
+          </div>
+
+          <div class="experience-list">
+            <article>
+              <span class="meta">AQWAM · SEP 2026–PRESENT</span>
+              <h3>Finance &amp; Project Controls Manager</h3>
+              <p>
+                Financial workflows, project budget planning, and contract records during the
+                company’s setup and pre-execution stage.
+              </p>
+            </article>
+
+            <article>
+              <span class="meta">EMC · MAY 2026–PRESENT · VOLUNTEER</span>
+              <h3>Programs Director</h3>
+              <p>
+                Training program operations, participant evaluations, monthly reporting, and
+                six delivered data workshops.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Final call to action -->
+      <section class="wrap cta" aria-labelledby="contact-heading">
+        <div>
+          <span class="eyebrow">LET’S CONNECT</span>
+          <h2 id="contact-heading">Have a Role or a Project in Mind?</h2>
+          <p>Open to Data Analyst and Power BI opportunities in Saudi Arabia or Remotely.</p>
+        </div>
+
+        <a class="button" href="/contact/contact.html">
+          Get in Touch <span aria-hidden="true">→</span>
+        </a>
+      </section>
     </main>
-  
-  <!-- Footer with social links and copyright -->
-  <footer>
-    <a href="https://www.linkedin.com/in/asem-haij-9797562a8" target="_blank" class="linkedin"><i class="fa-brands fa-linkedin"></i></a>
-    <a href="https://github.com/ProfASEM" target="_blank" class="github"><i class="fa-brands fa-github"></i></a>
-    <div class="copyright">
-       <p>Prof.ASEM HAIJ <strong id="year"></strong> <span>&copy</span> </p>
-    </div>
-  </footer>
-<!-- Main JavaScript for homepage -->
-<script src="main.js"></script>
-</body>
+
+    <!-- Footer with brand and social links -->
+    <footer class="wrap footer">
+      <a class="brand-name" href="/main/main.html">ASEM HAIJ<span>.</span></a>
+      <p>Data, understood. Decisions, informed.</p>
+
+      <div>
+        <a href="https://www.linkedin.com/in/asem-haij-9797562a8" target="_blank" rel="noopener noreferrer">
+          LinkedIn →
+        </a>
+        <a href="https://github.com/ProfASEM" target="_blank" rel="noopener noreferrer">
+          GitHub →
+        </a>
+        <span>© <span data-year>2026</span> Asem Haij</span>
+      </div>
+    </footer>
+    <!-- قبل نهاية <body> -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+  </body>
 </html>

@@ -1,135 +1,250 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About</title>
-  <!-- Main CSS -->
-  <link rel="stylesheet" href="about.css">
-  <!-- Font Awesome for icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <!-- Animate.css for animations -->
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>About | Asem Haij</title>
+    <meta
+      name="description"
+      content="Meet Asem Haij: mathematics graduate, data analyst, AQWAM Finance and Project Controls Manager, and EMC Programs Director."
+    >
+    <meta name="theme-color" content="#081923">
+
+    <meta property="og:title" content="About | Asem Haij">
+    <meta
+      property="og:description"
+      content="Meet Asem Haij: mathematics graduate, data analyst, AQWAM Finance and Project Controls Manager, and EMC Programs Director."
+    >
+    <meta property="og:type" content="website">
+    <!-- Animate.css for simple animations -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-  <!-- Google Fonts: Montserrat -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <!-- Favicon -->
-  <link rel="icon" href="img-20220929T213902Z-001/img/favicon.png">
-</head>
-<body>
-  <!-- Header and Navigation Bar -->
-  <header>
-    <nav>
-      <h1 id="logo">ASEM HAIJ</h1>
-      <div class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" tabindex="0">
-        <span></span>
-        <span></span>
-        <span></span>
+
+
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/site.css">
+        <!-- في الـ <head> -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="/assets/site.js" defer></script>
+  </head>
+
+  <body>
+    <!-- Accessibility shortcut for keyboard users -->
+    <a class="skip" href="#content">Skip to content</a>
+
+    <!-- Global site header and primary navigation -->
+    <header class="header">
+      <nav class="wrap nav" aria-label="Main navigation">
+        <a class="brand" href="/main/main.html" aria-label="Go to home page">
+          <span class="monogram">AH<span>.</span></span>
+          <span>
+            ASEM HAIJ
+            <small>DATA &amp; BUSINESS INTELLIGENCE</small>
+          </span>
+        </a>
+
+        <button class="menu-toggle" aria-expanded="false" aria-controls="navigation">
+          Menu <span aria-hidden="true">☰</span>
+        </button>
+
+        <div id="navigation" class="nav-links">
+          <a href="/main/main.html">Home</a>
+          <a href="/about/about.html" aria-current="page">About</a>
+          <a href="/projects/projects.html">Projects</a>
+          <a href="/blog/blog.html">Workshops</a>
+          <a href="/contact/contact.html">Contact</a>
+          <a href="/ar/about/about.html" class="lang-toggle" aria-label="Switch to Arabic version of the site">
+            العربية
+          </a>
+          <button class="theme-toggle" type="button" aria-label="Switch color theme">
+            Light mode
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <main id="content">
+      <!-- Intro section: short professional statement -->
+      <section class="wrap page-intro" aria-labelledby="about-heading">
+        <span class="eyebrow">ABOUT / ASEM HAIJ</span>
+        <h1 id="about-heading">
+          A mathematical mind.<br>
+          <em>A practical approach.</em>
+        </h1>
+        <p class="intro">I connect analytical detail with the business question behind it.</p>
+      </section>
+
+      <!-- Profile summary and core academic foundation -->
+      <section class="wrap split section about-top" aria-labelledby="profile-heading" data-aos="fade-up" data-aos-delay="200">
+        <div>
+          <h2 id="profile-heading">From Mathematics<br>to Business Intelligence.</h2>
+          <p>
+            I hold a B.Sc. in Mathematics from Sakarya University. My background shapes how I
+            approach data: question assumptions, check consistency, and explain the reasoning
+            behind the result.
+          </p>
+          <p>
+            My independent projects span Saudi real estate, financial sector performance,
+            logistics, e-commerce, and healthcare. I use Power BI, SQL, Python, and Excel to
+            prepare data, model relationships, define KPIs, and communicate findings.
+          </p>
+          <a class="button secondary" href="/Asem_Haij_CV_Data_Analyst_Updated.docx" download>
+            Download full CV ↓
+          </a>
+        </div>
+
+        <div class="credentials" aria-label="Professional profile summary">
+          <span class="eyebrow">FOUNDATION</span>
+          <h3>B.Sc. Mathematics</h3>
+          <p>
+            Sakarya University · 2020–2025<br>
+            GPA 3.06 / 4.00
+          </p>
+
+          <h3>IBM Data Analyst</h3>
+          <p>Professional Certificate · IBM / Coursera</p>
+
+          <hr>
+
+          <p>
+            Arabic · Native<br>
+            English · Professional working proficiency<br>
+            Turkish · Intermediate
+          </p>
+        </div>
+      </section>
+
+      <!-- Experience timeline highlighting key roles and responsibilities -->
+      <section class="wrap section" aria-labelledby="experience-heading" data-aos="fade-up" data-aos-delay="200">
+        <span class="eyebrow">EXPERIENCE</span>
+        <h2 id="experience-heading">Building systems. Explaining results.</h2>
+
+        <div class="timeline">
+          <article>
+            <div>
+              <span class="meta">SEP 2026–PRESENT</span>
+              <h3>AQWAM</h3>
+            </div>
+            <div>
+              <h3>Finance and Project Controls Manager</h3>
+              <p>
+                Contributed to establishing the financial and project controls framework,
+                including workflows, document templates, coding conventions, and structured
+                records.
+              </p>
+              <p>
+                Applied an Excel budget planning model to study project costs, allocate items
+                across the project timeline, and identify cost responsibilities before
+                execution. Recorded contract and counterparty information in the master
+                register.
+              </p>
+            </div>
+          </article>
+
+          <article>
+            <div>
+              <span class="meta">MAY 2026–PRESENT · VOLUNTEER</span>
+              <h3>EMC</h3>
+            </div>
+            <div>
+              <h3>Programs Director</h3>
+              <p>
+                Manage training program operations, scheduling, coordination, and follow-up.
+                Analyze participant evaluations and prepare monthly reports covering content,
+                trainer and organization ratings, and improvement priorities.
+              </p>
+              <p>
+                Delivered six data-focused workshops and contribute to developing Power BI and
+                data courses.
+              </p>
+            </div>
+          </article>
+
+          <article>
+            <div>
+              <span class="meta">2023–2024</span>
+              <h3>Azal International Company</h3>
+            </div>
+            <div>
+              <h3>Accounting and Data Management Intern</h3>
+              <p>
+                Maintained financial records and expense reports in Excel, supporting
+                reconciliation, validation, documentation, and periodic reporting.
+              </p>
+            </div>
+          </article>
+
+          <article>
+            <div>
+              <span class="meta">2021–2024</span>
+              <h3>Mathematics tutoring</h3>
+            </div>
+            <div>
+              <h3>University mathematics</h3>
+              <p>
+                Provided individual and group tutoring in calculus, algebra, numerical analysis, and advanced mathematics,
+                developing a clear, structured approach to explaining technical concepts.
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Skills section summarizing core tools and analytical strengths -->
+      <section class="wrap section" aria-labelledby="skills-heading" data-aos="fade-up" data-aos-delay="200">
+        <span class="eyebrow">SKILLS</span>
+        <h2 id="skills-heading">Tools with a Purpose.</h2>
+
+        <div class="skill-grid">
+          <article>
+            <h3>Business Intelligence</h3>
+            <p>Power BI · DAX · Star-schema modeling · Time intelligence · Desktop and mobile dashboards</p>
+          </article>
+
+          <article>
+            <h3>Data Preparation</h3>
+            <p>SQL · Power Query · Excel · pandas · NumPy · Cleaning, validation, and reconciliation</p>
+          </article>
+
+          <article>
+            <h3>Analytical Methods</h3>
+            <p>KPI design · Financial ratios · Trend analysis · Benchmarking · RFM · K-Means</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- Final call to action encouraging contact -->
+      <section class="wrap cta" aria-labelledby="contact-heading">
+        <div>
+          <span class="eyebrow">LET’S CONNECT</span>
+          <h2 id="contact-heading">Have a Role or a Project in Mind?</h2>
+          <p>Open to Data Analyst and Power BI opportunities in Saudi Arabia.</p>
+        </div>
+
+        <a class="button" href="/contact/contact.html">
+          Get in Touch <span aria-hidden="true">→</span>
+        </a>
+      </section>
+    </main>
+
+    <!-- Footer with brand and contact links -->
+    <footer class="wrap footer">
+      <a class="brand-name" href="/main/main.html">ASEM HAIJ<span>.</span></a>
+      <p>Data, understood. Decisions, informed.</p>
+
+      <div>
+        <a href="https://www.linkedin.com/in/asem-haij-9797562a8" target="_blank" rel="noopener noreferrer">
+          LinkedIn →
+        </a>
+        <a href="https://github.com/ProfASEM" target="_blank" rel="noopener noreferrer">
+          GitHub →
+        </a>
+        <span>© <span data-year>2026</span> Asem Haij</span>
       </div>
-      <ul id="nav-menu">
-        <li><a href="../main/main.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="../projects/projects.html">Projects</a></li>
-        <li><a href="../blog/blog.html">Blog</a></li>
-        <li><a href="../contact/contact.html">Contact</a></li>
-        <li>
-          <img src="../images/2408610.png" id="icon" alt="Toggle dark/light mode" style="width:32px;cursor:pointer;" title="Toggle dark/light mode">
-        </li>
-      </ul>
-    </nav>
-  </header>
-
-  <!-- Main Content Section -->
-  <section class="container">
-    <!-- About Me Section -->
-    <div class="sub-container-1">
-      <div class="left-side">
-        <h2>About Me</h2>
-        <p>
-I am a Data Analyst with a strong foundation in mathematics and hands-on experience delivering end-to-end analytics projects. My focus is on transforming raw data into structured insights that support business and strategic decision-making.
-
-I have worked on multiple data analytics projects across business performance, financial markets, e-commerce, and healthcare domains, using tools such as SQL, Python, and Power BI. My background in mathematics strengthens my analytical reasoning, data modeling, and problem-solving approach.
-
-Alongside my project work, I bring experience in data management and reporting from a professional internship environment, combined with strong communication skills developed through years of academic tutoring.
-        </p>
-      </div>
-      <div class="right-side">
-        <img src="../images/mathematics.jpg" alt="Asem Haij" style="width: 90%; border-radius: 20px; height: 300px; " >
-    </div>
-      </div>
-
-
-    <!-- Skills Section -->
-    <div class="sub-container-2">
-      <div class="left-side">
-        <img src="../images/code_programming_monitor_209719_1600x900.jpg" alt="Asem Haij" style="width: 90%; border-radius: 20px; height: 300px">
-      </div>
-      <div class="right-side">
-        <h2>Skills</h2>
-        <ul>
-          <li><strong>Data Analytics & BI:</strong> SQL, Power BI (DAX, Data Modeling), Excel (Pivot Tables, Lookups)</li>
-          <li><strong>Programming & Data Processing:</strong> Python (Pandas, NumPy, Matplotlib, Seaborn)</li>
-          <li><strong>Web & Tools:</strong> HTML, CSS, JavaScript, Git, GitHub</li>
-          <li><strong>Analytics Concepts:</strong> Data Cleaning, Exploratory Data Analysis, KPI Design, Data Visualization</li>
-          <li><strong>Mathematics & Analytical Thinking:</strong> Linear Algebra, Probability, Statistics, Optimization</li>
-          <li><strong>Languages:</strong> Arabic (Native), English (Intermediate), Turkish (Intermediate)</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- Experience Section -->
-    <div class="sub-container-3">
-      <div class="left-side">
-        <h2>Experience</h2>
-        <ul>
-          <li><strong>Math Tutor</strong> — Yemeni Students Union, Sakarya (2021–2022)
-            <ul>
-              <li>Delivered individual and group tutoring sessions in Calculus I & II.</li>
-              <li>Developed the ability to explain complex concepts clearly and logically</li>
-            </ul>
-          </li>
-          <li><strong>Private Math Tutor</strong> — Self-employed (2022–2024)
-            <ul>
-              <li>Provided tutoring across multiple advanced mathematics subjects.</li>
-              <li>Strengthened analytical communication and structured problem-solving skills.</li>
-            </ul>
-          </li>
-          <li><strong>Accounting & Data Management Intern</strong> — Azal International Company (2023 & 2024)
-            <ul>
-              <li>Assisted in managing financial and accounting data.</li>
-              <li>Supported reporting tasks and data organization processes.</li>
-              <li>Gained hands-on exposure to real-world data workflows.</li>
-            </ul>
-          </li>
-          <li><strong>Educational Content Creator</strong> — Freelance (Summer 2023)
-            <ul>
-              <li>Designed, recorded, and published two online courses on Calculus 2 & 3.</li>
-            </ul>
-          </li>
-        </ul>
-      </div>
-      <div class="right-side">
-        <img src="../images/data_analysis.jpg" alt="Asem Haij" style="width: 90%; border-radius: 20px; height: 300px;">
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer Section -->
-  <footer>
-    <a href="https://www.linkedin.com/in/asem-haij-9797562a8" target="_blank" class="linkedin">
-      <i class="fa-brands fa-linkedin"></i>
-    </a>
-    <a href="https://github.com/ProfASEM" target="_blank" class="github">
-      <i class="fa-brands fa-github"></i>
-    </a>
-    <div class="copyright">
-      <p>Prof.ASEM HAIJ <strong id="year"></strong> <span>&copy;</span></p>
-    </div>
-  </footer>
-
-  <!-- JavaScript for interactivity -->
-  <script src="about.js"></script>
-</body>
+    </footer>
+        <!-- قبل نهاية <body> -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+  </body>
 </html>
